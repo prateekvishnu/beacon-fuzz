@@ -60,72 +60,72 @@ jobs:
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.BSG1_MAYHEMFILE }} 
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.BSG1_MAYHEMFILE }} --duration 300
           sarif-output: sarif
 
       - name: Start analysis for BSG2
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.BSG2_MAYHEMFILE }} 
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.BSG2_MAYHEMFILE }} --duration 300
           sarif-output: sarif
 
       - name: Start analysis for DAG1
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DAG1_MAYHEMFILE }} 
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DAG1_MAYHEMFILE }} --duration 300
           sarif-output: sarif
 
       - name: Start analysis for DAG2
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DAG2_MAYHEMFILE }} 
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DAG2_MAYHEMFILE }} --duration 300
           sarif-output: sarif
 
       - name: Start analysis for DMG1
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DMG1_MAYHEMFILE }} 
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DMG1_MAYHEMFILE }} --duration 300
           sarif-output: sarif
 
       - name: Start analysis for DMG2
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DMG2_MAYHEMFILE }} 
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DMG2_MAYHEMFILE }} --duration 300
           sarif-output: sarif
           
-      # - name: Start analysis for DSG1
-      #   uses: ForAllSecure/mcode-action@v1
-      #   with:
-      #     mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-      #     args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DSG1_MAYHEMFILE }} 
-      #     sarif-output: sarif
+      - name: Start analysis for DSG1
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DSG1_MAYHEMFILE }} 
+          sarif-output: sarif
 
-      # - name: Start analysis for DSG2
-      #   uses: ForAllSecure/mcode-action@v1
-      #   with:
-      #     mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-      #     args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DSG2_MAYHEMFILE }} 
-      #     sarif-output: sarif
+      - name: Start analysis for DSG2
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.DSG2_MAYHEMFILE }} 
+          sarif-output: sarif
 
-      # - name: Start analysis for MSG1
-      #   uses: ForAllSecure/mcode-action@v1
-      #   with:
-      #     mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-      #     args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.MSG1_MAYHEMFILE }} 
-      #     sarif-output: sarif
+      - name: Start analysis for MSG1
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.MSG1_MAYHEMFILE }} 
+          sarif-output: sarif
 
-      # - name: Start analysis for MSG2
-      #   uses: ForAllSecure/mcode-action@v1
-      #   with:
-      #     mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-      #     args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.MSG2_MAYHEMFILE }} 
-      #     sarif-output: sarif
-      
+      - name: Start analysis for MSG2
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.MSG2_MAYHEMFILE }} 
+          sarif-output: sarif
+          
       - name: Upload SARIF file(s)
         uses: github/codeql-action/upload-sarif@v1
         with:
